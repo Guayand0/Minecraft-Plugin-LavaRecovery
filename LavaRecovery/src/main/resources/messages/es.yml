@@ -36,21 +36,25 @@ messages:
     - '&b<-----------------&aPERMISOS LAVARECOVERY&b----------------->'
     - '&elavarecovery.admin &7- Todos los permisos'
     - '&elavarecovery.updatechecker &7- Permite recibir un mensaje si hay una actualización'
-    - '&elavarecovery.use &7- Permite recoger lava haciendo click en obsidiana'
-    - '&elavarecovery.cooldown.exempt &7- Evita esperar para recoger lava de obsidiana'
+    - '&elavarecovery.use &7- Permite recuperar lava haciendo click en obsidiana'
+    - '&elavarecovery.cooldown.exempt &7- Evita esperar para recuperar lava de obsidiana'
 
-  command-no-argument: '%plugin% &7Usa &e/lavarecovery help &7para ver la lista de comandos.'
+  command-no-argument: '%plugin% &7Usa &e/lavarecovery help &7para ver la lista de comandos'
 
-  no-perm: '%plugin% &cNo tienes permiso para usar ese comando.'
+  no-perm: '%plugin% &cNo tienes permiso para usar ese comando'
 
-  console-error: '%plugin% &cNo puedes usar ese comando en la consola.'
+  console-error: '%plugin% &cNo puedes usar ese comando en la consola'
 
 config:
 
   update-checker:
-    - '%plugin% &bHay una nueva version disponible. &f(&e%latestversion%&f).'
+    - '%plugin% &bHay una nueva version disponible. &f(&e%latestversion%&f)'
     - '%plugin% &bDescargala aqui: &f%link%'
-    - '%plugin% &bAlgunas actualizaciones requieren modificar archivos manualmente.'
+    - '%plugin% &bAlgunas actualizaciones requieren modificar archivos manualmente'
     - '%plugin% &bLee los cambios: &f%link%/updates'
 
-  cooldown-message: '%chatplugin% &cDebes esperar &e%timereaming% &csegudos para recoger lava de obsidiana'
+  cooldown-message: '%chatplugin% &cDebes esperar &e%timereaming% &csegudos para recuperar lava de obsidiana'
+
+  lava-recovery-times: '%chatplugin% &aHas recuperado lava de la obsidiana &e%lavatimes% &ade &e%maxlavatimes% &aveces'
+
+  max-lava-recovery-reached: '%chatplugin% &cHas alcanzado el máximo de veces que puedes recuperar lava de obsidiana'

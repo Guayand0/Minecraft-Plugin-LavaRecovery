@@ -28,18 +28,19 @@ config:
   # Enable/Disable the update checker
   update-checker: true
 
-  # Enable/Disable the turn obsidian into lava option
-  obsidian-to-lava: true
+  # Chat prefix for plugin messages
+  chat-prefix: "&4[&6&lLavaRecovery&4]&f"
 
-  # Cooldown setting to turn obsidian into lava
-  cooldown:
-    enable: true
-    time: 60 # Time in seconds
+  # Enable/Disable the lava recovery from obsidian
+  lava-recovery: true
 
   # List of allowed worlds in which the plugin works
   allowed-worlds:
     - world
     - skyblock
 
-  # Chat prefix for plugin messages
-  chat-prefix: "&4[&6&lLavaRecovery&4]&f"
+  # Maximum number of recovery times allowed per player
+  max-recovery-times-player: 5 # Set -1 to disable
+
+  # Amount of time to recover lava from obsidian
+  lava-recovery-cooldown: 60 # Time in seconds, Set -1 to disable

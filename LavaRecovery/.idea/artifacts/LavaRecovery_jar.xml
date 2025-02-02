@@ -3,7 +3,6 @@
     <output-path>$USER_HOME$/Música/Minecraft Servers/Servers 1.7-1.21/server 1.21.4/plugins</output-path>
     <root id="archive" name="LavaRecovery.jar">
       <element id="module-output" name="LavaRecovery" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/libs/GY0lib-1.0.0.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

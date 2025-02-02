@@ -2,6 +2,7 @@ package com.Guayand0.commands;
 
 import com.Guayand0.LavaRecovery;
 import com.Guayand0.managers.LanguageManager;
+import com.Guayand0.managers.PlayerManager;
 import com.Guayand0.utils.MessageUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,11 +15,13 @@ public class ComandoPrincipal implements CommandExecutor {
 
     private final LavaRecovery plugin;
     private final LanguageManager languageManager;
+    private final PlayerManager playerManager;
     private final MessageUtils MU = new MessageUtils();
 
     public ComandoPrincipal(LavaRecovery plugin) {
         this.plugin = plugin;
         this.languageManager = plugin.getLanguageManager();
+        this.playerManager = plugin.getPlayerManager();
     }
 
     @Override
@@ -29,6 +32,10 @@ public class ComandoPrincipal implements CommandExecutor {
             if (args.length >= 1) {
                 if (args[0].equalsIgnoreCase("reload")) {
                     plugin.reloadConfig();
+                    plugin.registerPlaceholders();
+                    languageManager.reloadLanguage();
+                    playerManager.reloadPlayer();
+
                     String messagePath = "messages.reload";
                     String message = languageManager.getMessage(messagePath);
                     sender.sendMessage(MU.getColoredReplacePluginPlaceholdersText(message, plugin.replacePluginPlaceholders));
@@ -93,6 +100,7 @@ public class ComandoPrincipal implements CommandExecutor {
         plugin.reloadConfig();
         plugin.registerPlaceholders();
         languageManager.reloadLanguage();
+        playerManager.reloadPlayer();
 
         String messagePath = "messages.reload";
         String message = languageManager.getMessage(messagePath);

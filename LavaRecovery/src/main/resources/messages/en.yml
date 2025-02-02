@@ -36,8 +36,8 @@ messages:
     - '&b<-----------------&aPERMISSIONS LAVARECOVERY&b----------------->'
     - '&elavarecovery.admin &7- All permissions'
     - '&elavarecovery.updatechecker &7- Allow receive message if there is an update'
-    - '&elavarecovery.use &7- Allow get lava from obsidian'
-    - '&elavarecovery.cooldown.exempt &7- Avoid wait to get lava from obsidian'
+    - '&elavarecovery.use &7- Allow collect lava from obsidian'
+    - '&elavarecovery.cooldown.exempt &7- Avoid wait to collect lava from obsidian'
 
   command-no-argument: '%plugin% &7Use &e/lavarecovery help &7to see the command list.'
 
@@ -53,4 +53,8 @@ config:
   - '%plugin% &bSome updates may require you to change some things manually.'
   - '%plugin% &bRead changelog: &f%link%/updates'
 
-  cooldown-message: '%chatplugin% &cYou must wait &e%timereaming% &cseconds to turn obsidian into lava'
+  cooldown-message: '%chatplugin% &cYou must wait &e%timereaming% &cseconds to collect lava from obsidian'
+
+  lava-recovery-times: '%chatplugin% &aYou have collected lava from obsidian &e%lavatimes% &aout of &e%maxlavatimes% &atimes'
+
+  max-lava-recovery-reached: '%chatplugin% &cYou have reached the max times you can collect lava from obsidian'

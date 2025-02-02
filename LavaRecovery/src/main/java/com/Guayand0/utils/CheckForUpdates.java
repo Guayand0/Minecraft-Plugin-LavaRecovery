@@ -28,14 +28,14 @@ public class CheckForUpdates implements Listener {
             Player player = event.getPlayer();
             boolean updateChecker = plugin.getConfig().getBoolean("config.update-checker");
 
+            if (!plugin.updateCheckerWork) {
+                plugin.comprobarActualizaciones();
+            }
+
             // Verificar si el mensaje de actualización debe enviarse
             if (updateChecker && (UC.compareVersions(plugin.currentVersion, plugin.lastVersion) < 0)) {
 
                 if (player.isOp() || player.hasPermission("lavarecovery.updatechecker") || player.hasPermission("lavarecovery.admin")) {
-
-                    if (!plugin.updateCheckerWork) {
-                        plugin.comprobarActualizaciones();
-                    }
 
                     String messagePath = "config.update-checker";
                     List<String> fullMsg = languageManager.getStringList(messagePath);

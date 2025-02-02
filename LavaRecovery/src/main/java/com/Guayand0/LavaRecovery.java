@@ -1,6 +1,7 @@
 package com.Guayand0;
 
 import com.Guayand0.commands.*;
+import com.Guayand0.events.OnPlayerJoin;
 import com.Guayand0.events.PlayerInteract;
 import com.Guayand0.managers.*;
 import com.Guayand0.utils.*;
@@ -29,6 +30,7 @@ public class LavaRecovery extends JavaPlugin {
     private final MessageUtils MU = new MessageUtils();
     private final UpdateChecker UC = new UpdateChecker();
     private LanguageManager languageManager;
+    private PlayerManager playerManager;
 
     @Override
     public void onEnable() {
@@ -38,6 +40,7 @@ public class LavaRecovery extends JavaPlugin {
             registerPlaceholders();
 
             languageManager = new LanguageManager(LavaRecovery.this);
+            playerManager = new PlayerManager(LavaRecovery.this);
 
             registrarComandos();
             registrarEventos();
@@ -57,12 +60,12 @@ public class LavaRecovery extends JavaPlugin {
                 }
             }.runTask(this); // Ejecuta la tarea en el siguiente tick
 
+        Metrics metrics = new Metrics(this, bstatsID); // Bstats
+
         } catch (Exception e) {
             Bukkit.getConsoleSender().sendMessage(MU.getColoredText(prefix + " &cError while enabling plugin."));
             e.printStackTrace();
         }
-
-        Metrics metrics = new Metrics(this, bstatsID); // Bstats
 
         Bukkit.getConsoleSender().sendMessage(MU.getColoredText("&9<------------------------------------>"));
         Bukkit.getConsoleSender().sendMessage(MU.getColoredText(prefix + " &fEnabled, (&aVersion: &e" + currentVersion + "&f)"));
@@ -86,6 +89,7 @@ public class LavaRecovery extends JavaPlugin {
     private void registrarEventos() {
         getServer().getPluginManager().registerEvents(new PlayerInteract(this), this);
         getServer().getPluginManager().registerEvents(new CheckForUpdates(this), this);
+        getServer().getPluginManager().registerEvents(new OnPlayerJoin(this), this);
     }
 
     public void registerPlaceholders() {
@@ -101,13 +105,21 @@ public class LavaRecovery extends JavaPlugin {
         return languageManager;
     }
 
+    public PlayerManager getPlayerManager() {
+        return playerManager;
+    }
+
     public void getLastVersion() {
         try {
             lastVersion = UC.getLatestSpigotVersion(spigotID, 5000);  // Obtener la última versión desde la clase UpdateChecker
         } catch (SocketTimeoutException ex) {
             Bukkit.getConsoleSender().sendMessage(MU.getColoredText(prefix + " &cConection timed out. The version will be checked later."));
+            lastVersion = currentVersion;
+            updateCheckerWork = false;
         } catch (Exception ex) {
             Bukkit.getConsoleSender().sendMessage(MU.getColoredText(prefix + " &cError while checking update."));
+            lastVersion = currentVersion;
+            updateCheckerWork = false;
         }
     }
 
