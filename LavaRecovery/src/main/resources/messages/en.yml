@@ -1,0 +1,56 @@
+# ############################################################################################################# #
+# +-----------------------------------------------------------------------------------------------------------+ #
+# |                                                                                                           | #
+# |     ██╗      █████╗ ██╗   ██╗ █████╗ ██████╗ ███████╗ █████╗  █████╗ ██╗   ██╗███████╗██████╗ ██╗   ██╗   | #
+# |     ██║     ██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██║   ██║██╔════╝██╔══██╗╚██╗ ██╔╝   | #
+# |     ██║     ███████║╚██╗ ██╔╝███████║██████╔╝█████╗  ██║  ╚═╝██║  ██║╚██╗ ██╔╝█████╗  ██████╔╝ ╚████╔╝    | #
+# |     ██║     ██╔══██║ ╚████╔╝ ██╔══██║██╔══██╗██╔══╝  ██║  ██╗██║  ██║ ╚████╔╝ ██╔══╝  ██╔══██╗  ╚██╔╝     | #
+# |     ███████╗██║  ██║  ╚██╔╝  ██║  ██║██║  ██║███████╗╚█████╔╝╚█████╔╝  ╚██╔╝  ███████╗██║  ██║   ██║      | #
+# |     ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚════╝  ╚════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝      | #
+# |                                                                                                           | #
+# |                    Youtube:    www.youtube.com/@davigamer1614                                             | #
+# |                    Github:     https://github.com/Guayand0/Minecraft-Plugin-LavaRecovery                  | #
+# |                                                                                                           | #
+# +-----------------------------------------------------------------------------------------------------------+ #
+# ############################################################################################################# #
+
+messages:
+
+  help:
+    - '&b<-----------------&aCOMMANDS LAVARECOVERY&b----------------->'
+    - '&e/lavarecovery help &7- Show this message'
+    - '&e/lavarecovery reload &7- Reload plugin config'
+    - '&e/lavarecovery version &7- Show plugin version'
+    - '&e/lavarecovery author &7- Show plugin author'
+    - '&e/lavarecovery permissions &7- Show plugin permission list'
+    - '&e/lavarecovery plugin &7- Show plugin download link'
+    - '&7Aliases: &elavarecovery&7, &elr'
+
+  reload: '%plugin% &aThe plugin has been reloaded.'
+
+  version: '%plugin% &aPlugin version: &b%version%'
+
+  author: '%plugin% &aPlugin author: &b%author%'
+
+  permissions:
+    - '&b<-----------------&aPERMISSIONS LAVARECOVERY&b----------------->'
+    - '&elavarecovery.admin &7- All permissions'
+    - '&elavarecovery.updatechecker &7- Allow receive message if there is an update'
+    - '&elavarecovery.use &7- Allow get lava from obsidian'
+    - '&elavarecovery.cooldown.exempt &7- Avoid wait to get lava from obsidian'
+
+  command-no-argument: '%plugin% &7Use &e/lavarecovery help &7to see the command list.'
+
+  no-perm: '%plugin% &cYou don`t have permission to use that command.'
+
+  console-error: '%plugin% &cYou can`t use that command in console.'
+
+config:
+
+  update-checker:
+  - '%plugin% &bThere is a new version available. &f(&e%latestversion%&f).'
+  - '%plugin% &bDownload it here: &f%link%'
+  - '%plugin% &bSome updates may require you to change some things manually.'
+  - '%plugin% &bRead changelog: &f%link%/updates'
+
+  cooldown-message: '%chatplugin% &cYou must wait &e%timereaming% &cseconds to turn obsidian into lava'

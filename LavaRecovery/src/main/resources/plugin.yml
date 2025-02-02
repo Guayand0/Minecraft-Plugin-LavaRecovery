@@ -1,0 +1,27 @@
+main: com.Guayand0.LavaRecovery
+name: LavaRecovery
+version: 1.0.0
+author: Guayand0
+api-version: 1.13
+softdepend: [PlaceholderAPI]
+description: Un plugin que permite recuperar lava de bloques de obsidiana.
+
+commands:
+  lavarecovery:
+    description: Comando principal
+    usage: /lavarecovery <arg0>
+    aliases: lr
+
+permissions:
+  lavarecovery.admin:
+    default: op
+    description: Sirve para poder usar comandos de administrador
+  lavarecovery.updatechecker:
+    default: op
+    description: Sirve para recibir un mensaje al entrar al servidor si hay una nueva version del plugin
+  lavarecovery.use:
+    default: op
+    description: Sirve para poder convertir obsidiana en lava
+  lavarecovery.cooldown.exempt:
+    default: op
+    description: Sirve para no tener que esperar para poder convenrtir obsidiana en lava
