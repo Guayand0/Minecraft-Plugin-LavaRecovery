@@ -57,10 +57,11 @@ config:
 
 Before
 ``` yml
-# Cooldown setting to turn obsidian into lava
-cooldown:
-  enable: true
-  time: 60 # Time in seconds
+config:
+  # Cooldown setting to turn obsidian into lava
+  cooldown:
+    enable: true
+    time: 60 # Time in seconds
 ```
 
 After
@@ -90,4 +91,4 @@ player:
           recovery-times: 0
         <world2>:
           recovery-times: 0
-```****
+```
